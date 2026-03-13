@@ -69,6 +69,13 @@ winget install 7zip.7zip
 On first use per session you will see a UAC prompt to open the elevated session.
 After approving, all winget commands run without further prompts.
 
+## Known Limitations
+
+winget uses carriage-return overwriting for spinners and download progress bars.
+Because output is captured line-by-line through the pipe, each frame appears as an
+individual line rather than updating in place. This cannot be suppressed. The actual
+command output (package lists, install results) is unaffected.
+
 ## Versions
 
 | Version | Notes |
